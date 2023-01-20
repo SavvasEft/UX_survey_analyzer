@@ -42,7 +42,7 @@ The graph shown is for Run-1 on the dataset described. The 7 categories appear a
 - Uncover Hidden Patterns
 
 What are the correlations between various features? A bar chart per feature is made, by isolating answers that include that feature, and identifying all the other features used in the answers.  
-![Alt text](top_10_feature_dependencies.png "Feature dependencies")
+![Alt text](images/top_10_feature_dependencies.png "Feature dependencies")
 
 **The first bar to each subplot refers to the number of answers that include only the chosen feature, and no other.
 
@@ -51,14 +51,14 @@ The graph shown is for Run-1 on the dataset described. Focusing on feature "jobs
 
 - Remove Noise and Zero-Information Features for Cleaner Data Analysis
 
-![Alt text](stop_word_list.png "screenshot of stop_word_list.xlsx used in run-1")
+![Alt text](images/stop_word_list.png "screenshot of stop_word_list.xlsx used in run-1")
 
 By completing a word in stop_word_list.xls file (in the first column), and writing 1 next to it, it is removed from the analysis. this way one can remove zero-information features from the analysis.
 
 - Group and Replace Features for More Focused Analysis
 
 The topic_dictionary.xlsx determines what features have the same meaning. All words in a column are replaced with the word in the first row. 
-![Alt text](topic_dict.png "screenshot of the topic_dictionary.xlsx used in run-1")
+![Alt text](images/topic_dict.png "screenshot of the topic_dictionary.xlsx used in run-1")
 
 For "Run-1", words in the first rows were chosen according to the performed classifications. Words to be grouped were chosen by skimming the text.
 
@@ -71,14 +71,14 @@ Based on the chosen features, clustering is performed (K-Means clustering is use
 - Viewing the Overall Distribution of Clusters and Answer Counts
 
 A car chart is prepared showing the distribution of answers to clusters.
-![Alt text](cluster_counts.png "Answer counts per cluster")
+![Alt text](images/cluster_counts.png "Answer counts per cluster")
 
 Note: General guideline 1: when choosing a cluster number, it is advised that most answers are distributed among many clusters and not a single cluster. Depending on context this may not apply. 
 
 
 - Uncover the Topics of Feedback by drilling down into Individual Clusters
 
-![Alt text](features_per_cluster.png "features per cluster for run-1")
+![Alt text](images/features_per_cluster.png "features per cluster for run-1")
 
 For each cluster, a subplot shows the top features (based on answer counts). This can reveal topics covered by answers in that cluster.
 
@@ -87,7 +87,7 @@ For each cluster, a subplot shows the top features (based on answer counts). Thi
 
 Modifying some of the parameters can reveal more sub-categories: Removing the categories from the topic_dictionary (except synonyms), and increasing the number of clusters from 7 to 35, more subcategories are revealed:
 
-![Alt text](features_per_cl.png "features per cluster for run-2")
+![Alt text](images/features_per_cl.png "features per cluster for run-2")
 
 i.e. From features in cluster 7, one can distinguish that some can't afford to pay the rent. 
 
