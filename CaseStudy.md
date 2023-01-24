@@ -132,13 +132,13 @@ Requirements:
 <a name='1-12'></a>
 #### Terms used:
 
-'n-gram': 'a contiguous sequence of n items from a given sample of text' [source](https://en.wikipedia.org/wiki/N-gram). Can be 1-gram -> 1 word, 2-gram -> 2-word sequence, n-gram-> n-word sequence.
+- 'n-gram': 'a contiguous sequence of n items from a given sample of text' [source](https://en.wikipedia.org/wiki/N-gram). Can be 1-gram -> 1 word, 2-gram -> 2-word sequence, n-gram-> n-word sequence.
 
-'feature': referes to a term (can be an n-gram) used that is characteristics to a group of answers and is readable by a machine. This can some times be correct-spelling words, understandable by humans (if lemmatization is used), or not (if porter-stemmer is used)
+- 'feature': referes to a term (can be an n-gram) used that is characteristics to a group of answers and is readable by a machine. This can some times be correct-spelling words, understandable by humans (if lemmatization is used), or not (if porter-stemmer is used)
 
-'lemmatization': "the process of grouping together the inflected forms of a word so they can be analysed as a single item, identified by the word's lemma" [source](https://en.wikipedia.org/wiki/Lemmatisation)
+- 'lemmatization': "the process of grouping together the inflected forms of a word so they can be analysed as a single item, identified by the word's lemma" [source](https://en.wikipedia.org/wiki/Lemmatisation)
 
-'stemming': 'the process of reducing inflected (or sometimes derived) words to their word stem, base or root form—generally a written word form' [source](https://en.wikipedia.org/wiki/Stemming)
+- 'stemming': 'the process of reducing inflected (or sometimes derived) words to their word stem, base or root form—generally a written word form' [source](https://en.wikipedia.org/wiki/Stemming)
 
-'Porter-Stemmer': A stemming algorithm  written by Martin Porter in 1980, widely used.
+- 'Porter-Stemmer': A stemming algorithm  written by Martin Porter in 1980, widely used.
 
