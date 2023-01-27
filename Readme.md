@@ -1,6 +1,6 @@
 # Analysing Open-Ended Feedback: Discover Insights with this Survey Analysis Tool
 
-A repository for a tool that can assist in analyzing open-ended questions. The user can easily identify topics covered in open-ended questions.
+A repository for a tool that can assist in analysing open-ended questions. The user can easily identify topics covered in open-ended questions.
 
 ![ERROR: Can't be displayed](images/features_count.png "Bar graph showing the popular features in the corpus")
 
@@ -31,15 +31,16 @@ A repository for a tool that can assist in analyzing open-ended questions. The u
 
 The code does the following:
 
-1. Filters out stop-words and applies Porter-stemmer (option for lematization).
-2. Vectorizes answers (using TFIDF vectorizer).
-3. Clusters the answer vectors using K-means clustering.
-4. Based on a normalized eucledean distance (between answer vectors and cluster centroids) calculates a score for each asnwers per cluster. This indicates the relevance of the answer to the cluster.
+1. Filters out stop-words and applies Porter-stemmer (option for lemmatisation).
+2. Vectorizes answers using TFIDF vectorizer (fig. (a) below).
+3. Clusters the answer vectors using K-means clustering (fig. (b) below).
+4. Based on a normalized Euclidean distance (between answer vectors and cluster centroids) a score is calculated for each answer. The score is according to the closest (smaller Euclidean distance) cluster centroid (fig. (c) below).
 
+![Alt text](images/code_illustration.png "screenshot of the topic_dictionary.xlsx used in run-1")
 ## Requirements:
 
 Four files are necessary:
-   -  'raw_data.xlsx' : this includes answers to be analyzed  the following structure:
+   -  'raw_data.xlsx' : this includes answers to be analysed  the following structure:
       - question is on the first row
       - answers for one open-ended question below the question
       - one answer per row, all in the first column
@@ -51,14 +52,14 @@ Four files are necessary:
       - TOP_FEATURES : number of top features to keep (integer). The user can choose the number of top features to keep for vectorization and clustering. Features are sorted based on the number of answers for each feature. This number defines how many features to keep for further analysis and clustering.
       - REPORT : Save a clustering report in file 'clustering_report.xlsx' (True/False)
       - SAVE_FEATURES : Saves identified features in features.xlsx (True/False)
-      Can be usefull when identifying features to add in the 'stop_words_list.xlsx'
+      Can be useful when identifying features to add in the 'stop_words_list.xlsx'
       - PREDICT : Option to write a sentence, and predict it's cluster and score (True/False)
       - N_GRAMS_MIN : Define minimum [n-gram](#2-1) to be considered as feature (int)
       - N_GRAMS_MAX : Define maximum n-gram to be considered as feature (int)
       - PORTER_OR_LEMMATIZER : choose porter stemmer (1) or WordNetLemmatizer (2)
-      - SAVE_VIZ : save vizualizations in current folder (True/False)
+      - SAVE_VIZ : save visualizations in current folder (True/False)
    - 'topic_dictionary.xlsx' : features that are grouped together are defined here, as described above.
-   - 'stop_word_list.xlsx' : features with zero-iformation can be added here, as described above.
+   - 'stop_word_list.xlsx' : features with zero-information can be added here, as described above.
 
 - dependencies:
    python 3, numpy, pandas, nltk, scikitlearn, matplotlib
@@ -74,7 +75,7 @@ The following shows insights gained from using the tool for a particular dataset
 
 ### The dataset:
    
-The dataset (found [here](https://catalog.data.gov/dataset/spirit-of-east-austin-feedback-data)) is from the Health Equity and Community Engagement department of the city of Austin Texas in an efford to identify the needs of the community, in the summer of 2017. The open-ended answers were isolated in the 'raw_data.xlsx' file, according to the above requirements.
+The dataset (found [here](https://catalog.data.gov/dataset/spirit-of-east-austin-feedback-data)) is from the Health Equity and Community Engagement department of the city of Austin Texas in an effort to identify the needs of the community, in the summer of 2017. The open-ended answers were isolated in the 'raw_data.xlsx' file, according to the above requirements.
 
 #### Access & Use of data:
 'Public: This dataset is intended for public access and use.'
@@ -86,7 +87,7 @@ Knowledge of the context of the answers is necessary in order to use the tool mo
 
 Two runs on the same dataset were performed in order to demonstrate how general topics (Run-1) and sub-categorical topics (Run-2) can be revealed.
 
-### Run-1: Analyzing answers in general categories
+### Run-1: Analysing answers in general categories
 
 The open-ended answers were classified from the organization into seven categories: 'Education', 'Jobs', 'Transportation', 'Safety', 'Health', 'Housing Culture' and 'Environment'. In order for the results to be closer to this goal, the number of cluster was chosen to be 7. 
 
@@ -121,7 +122,7 @@ The open-ended answers were classified from the organization into seven categori
 
    **The first bar to each subplot refers to the number of answers that include only the chosen feature, and no other.
 
-   Focusing on the first bar chart, that analyzes the feature "jobs", we see that 5% of answers that include this feature, also include the feature "hous_cultur", around 3% of them includes "education" and less than 3% of these answers include other features. 
+   Focusing on the first bar chart, that analyses the feature "jobs", we see that 5% of answers that include this feature, also include the feature "hous_cultur", around 3% of them includes "education" and less than 3% of these answers include other features. 
 
    In most of the bar charts, the feature 'jobs' (black bar) can be identified as the second most frequent feature (around 5 % of answers from most features). 
 
@@ -160,7 +161,7 @@ The open-ended answers were classified from the organization into seven categori
 <a name='2-1'></a>
 - 'n-gram': 'a contiguous sequence of n items from a given sample of text' [source](https://en.wikipedia.org/wiki/N-gram). Can be 1-gram -> 1 word, 2-gram -> 2-word sequence, n-gram-> n-word sequence.
 
-- 'feature': referes to a term (can be an n-gram) used that is characteristics to a group of answers and is readable by a machine. This can some times be correct-spelling words, understandable by humans (if lemmatization is used), or not (if porter-stemmer is used)
+- 'feature': refers to a term (can be an n-gram) used that is characteristics to a group of answers and is readable by a machine. This can some times be correct-spelling words, understandable by humans (if lemmatization is used), or not (if porter-stemmer is used)
 
 - 'lemmatization': "the process of grouping together the inflected forms of a word so they can be analysed as a single item, identified by the word's lemma" [source](https://en.wikipedia.org/wiki/Lemmatisation)
 
