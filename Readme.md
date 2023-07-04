@@ -75,7 +75,7 @@ The following shows insights gained from using the tool for a particular dataset
 
 ### The dataset:
    
-The dataset (found [here](https://catalog.data.gov/dataset/spirit-of-east-austin-feedback-data)) is from the Health Equity and Community Engagement department of the city of Austin Texas in an effort to identify the needs of the community, in the summer of 2017. The open-ended answers were isolated in the 'raw_data.xlsx' file, according to the above requirements.
+The dataset (found [here](https://data.austintexas.gov/dataset/Spirit-Of-East-Austin-Feedback-Data/5cgq-dtjg)) is from the Health Equity and Community Engagement department of the city of Austin Texas in an effort to identify the needs of the community, in the summer of 2017. The open-ended answers were isolated in the 'raw_data.xlsx' file, according to the above requirements.
 
 #### Access & Use of data:
 'Public: This dataset is intended for public access and use.'
